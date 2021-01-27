@@ -25,6 +25,30 @@
 
 
 
+		// Scroll to anchor
+		// $('a[href^="#"]').bind('click',function (e) {
+		// 	e.preventDefault();
+		// 	var target = this.hash,
+		// 		$target = $(target);
+		//
+		// 	$('html, body').stop().animate( {
+		// 		'scrollTop': $target.offset().top-80
+		// 	}, 900, 'smooth', function () {
+		// 		window.location.hash = target;
+		// 	} );
+		// 	return false
+		// } );
+
+		// Smooth scroll to anchor.
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+				});
+			});
+		});
+
 	});
 
 })(jQuery);

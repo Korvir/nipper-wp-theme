@@ -12,7 +12,7 @@ if ( function_exists('get_fields') ){
 	<main role="main" class="homepage">
 
 
-		<section class="homepage-banner">
+		<section class="homepage-banner" id="about_us">
 			<div class="container-fluid px-0 overflow-hidden">
 				<div class="row d-flex flex-column flex-lg-row">
 					<div class="homepage-banner--content text-center d-flex flex-column align-items-center justify-content-center col-12 col-lg-6">
@@ -37,7 +37,7 @@ if ( function_exists('get_fields') ){
 		</section>
 
 
-		<section class="homepage-restaurant-menu block-restaurant-menu">
+		<section class="homepage-restaurant-menu block-restaurant-menu" id="restaurant_menu">
 			<?php if ( have_rows('flexible_contents' ) ) : ?>
 				<?php
 				while( have_rows('flexible_contents') ) :
@@ -57,7 +57,6 @@ if ( function_exists('get_fields') ){
 				?>
 			<?php endif; ?>
 		</section>
-
 
 
 	</main>

@@ -24,7 +24,7 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 			] );
 			?>
 
-			<div class="col-12 d-flex p-xxl-5 flex-wrap align-items-start justify-content-start">
+			<div class="col-12 d-flex px-xxl-5 flex-wrap align-items-start justify-content-start">
 				<h2 class="w-100"> <?php echo $tax_obj->name ?> </h2>
 			</div>
 
