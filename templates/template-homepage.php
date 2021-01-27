@@ -23,7 +23,7 @@ if ( function_exists('get_fields') ){
 							<?php echo $SVG['quotes'] ?>
 						</div>
 					</div>
-					<div class="homepage-banner--image col-12 col-lg-6">
+					<div class="homepage-banner--image p-0 col-12 col-lg-6">
 						<div class="image-overlay">
 							<img src="<?php echo $home_fields['banner-image']['sizes']['thumbnail'] ?>"
 								 data-src="<?php echo $home_fields['banner-image']['sizes']['large'] ?>"

@@ -41,12 +41,12 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 								</div>
 								<div class="single-restaurant-product--weight d-flex ">
 									<?php echo $weight; ?>
-									<h3 class="d-flex align-items-center ml-3 d-lg-none"> <?php echo $price . ' ' . $price_currency; ?></h3>
+<!--									<h3 class="d-flex align-items-center ml-3 d-lg-none"> --><?php //echo $price . ' ' . $price_currency; ?><!--</h3>-->
 								</div>
 							</div>
-							<div class="price d-none d-lg-block">
+							<div class="price">
 								<?php
-								echo $price . ' ' . $price_currency;
+								echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
 								?>
 							</div>
 						</div>
@@ -94,12 +94,12 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 								</div>
 								<div class="single-restaurant-product--weight d-flex">
 									<?php echo $weight; ?>
-									<h3 class="d-flex align-items-center ml-3 d-lg-none"> <?php echo $price . ' ' . $price_currency; ?></h3>
+<!--									<h3 class="d-flex align-items-center ml-3 d-lg-none"> --><?php //echo $price . ' ' . $price_currency; ?><!--</h3>-->
 								</div>
 							</div>
-							<div class="price d-none d-lg-block">
+							<div class="price">
 								<?php
-								echo $price . ' ' . $price_currency;
+								echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
 								?>
 							</div>
 						</div>

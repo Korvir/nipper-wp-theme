@@ -34,91 +34,154 @@
 					<div class="col-12 col-lg-6 contacts">
 						<div class="contacts-inner w-100 d-flex flex-column align-items-center">
 
-						<img src="<?php echo $footer_logo['sizes']['thumbnail'] ?>"
-							 data-src="<?php echo $footer_logo['sizes']['medium'] ?>"
-							 class="footer-logo w-100 blur-up lazyload"
-							 alt="logo"
-							 loading="lazy" >
+							<img src="<?php echo $footer_logo['sizes']['thumbnail'] ?>"
+								 data-src="<?php echo $footer_logo['sizes']['medium'] ?>"
+								 class="footer-logo w-100 blur-up lazyload"
+								 alt="logo"
+								 loading="lazy" >
 
-						<h3> <?php echo $footer_title ?> </h3>
+							<h3> <?php echo $footer_title ?> </h3>
 
-						<div class="contacts-inner-info w-100">
-							<?php if ( $footer_address ) : ?>
-							<p class="d-flex">
-								<span class="d-inline-block svg"> <?php echo $SVG['address'] ?></span>
+							<div class="contacts-inner-info w-100">
 
-								<?php if ( $footer_address_url ) : ?>
-									<a href="<?php echo $footer_address_url ?>">
+								<!-- Address-->
+								<?php if ( $footer_address ) : ?>
+								<p class="d-flex">
+									<span class="d-flex align-items-end justify-content-start svg"> <?php echo $SVG['address'] ?></span>
+									<?php if ( $footer_address_url ) : ?>
+										<a href="<?php echo $footer_address_url ?>" target="_blank">
+											<?php echo $footer_address ?>
+										</a>
+									<?php else: ?>
 										<?php echo $footer_address ?>
-									</a>
-								<?php else: ?>
-									<?php echo $footer_address ?>
+									<?php endif; ?>
+								</p>
 								<?php endif; ?>
-							</p>
-							<?php endif; ?>
+								<!-- -->
 
-							<?php if ( $footer_phone ) : ?>
-								<p class="d-flex">
-									<span class="d-inline-block svg"><?php echo $SVG['phone'] ?></span>
-									<a href="<?php echo tel_href($footer_phone) ?>">
-										<?php echo $footer_phone ?>
-									</a>
-								</p>
-							<?php endif; ?>
+								<!-- Phone -->
+								<?php if ( $footer_phone ) : ?>
+									<p class="d-flex">
+										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['phone'] ?></span>
+										<a href="<?php echo tel_href($footer_phone) ?>">
+											<?php echo $footer_phone ?>
+										</a>
+									</p>
+								<?php endif; ?>
+								<!-- -->
 
-							<?php if ( $footer_email ) : ?>
-								<p class="d-flex">
-									<span class="d-inline-block svg"><?php echo $SVG['email'] ?></span>
-									<a href="<?php echo mail_href($footer_email) ?>">
-										<?php echo $footer_email ?>
-									</a>
-								</p>
-							<?php endif; ?>
+								<!-- Social icons------------------------------ -->
+								<!-- Instagramm -->
+								<?php if ( $social_instagram ) : ?>
+									<p class="d-flex">
+										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['instagram_logo'] ?></span>
+										<a href="<?php echo $social_instagram['url'] ?>">
+											<?php echo $social_instagram['title'] ?>
+										</a>
+									</p>
+								<?php endif; ?>
+								<!-- -->
+								<!-- Facebook -->
+								<?php if ( $social_facebook ) : ?>
+									<p class="d-flex">
+										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['facebook_logo'] ?></span>
+										<a href="<?php echo $social_facebook['url'] ?>">
+											<?php echo $social_facebook['title'] ?>
+										</a>
+									</p>
+								<?php endif; ?>
+								<!-- -->
+								<!-- Linkedin -->
+								<?php if ( $social_linkedin ) : ?>
+									<p class="d-flex">
+										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['linkedin_logo'] ?></span>
+										<a href="<?php echo $social_linkedin['url'] ?>">
+											<?php echo $social_linkedin['title'] ?>
+										</a>
+									</p>
+								<?php endif; ?>
+								<!-- -->
+								<!-- GooglePlus -->
+								<?php if ( $social_google ) : ?>
+									<p class="d-flex">
+										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['googleplus_logo'] ?></span>
+										<a href="<?php echo $social_google['url'] ?>">
+											<?php echo $social_google['title'] ?>
+										</a>
+									</p>
+								<?php endif; ?>
+								<!-- -->
+								<!-- ------------------------------------------ -->
 
-							<?php if ( $footer_work_time ) : ?>
-							<div class="d-flex w-100">
-								<span class="d-inline-block svg"><?php echo $SVG['worktime'] ?></span>
+								<!-- Email -->
+								<?php if ( $footer_email ) : ?>
+									<p class="d-flex">
+										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['email'] ?></span>
+										<a href="<?php echo mail_href($footer_email) ?>">
+											<?php echo $footer_email ?>
+										</a>
+									</p>
+								<?php endif; ?>
+								<!-- -->
 
-								<div class=" d-flex flex-column day_time_wrap w-100">
-								<?php foreach ( $footer_work_time  as $footer_work_time_day) : ?>
-								<div class="day_time d-flex ">
-									<time class="days"> <?php echo $footer_work_time_day['days'] ?> </time>
-									<time class="time"> <?php echo $footer_work_time_day['time'] ?> </time>
+								<!-- Worktime -->
+								<?php if ( $footer_work_time ) : ?>
+								<div class="d-flex w-100">
+									<span class="d-flex align-items-start justify-content-start svg"><?php echo $SVG['worktime'] ?></span>
+
+									<div class=" d-flex flex-column day_time_wrap w-100">
+									<?php foreach ( $footer_work_time  as $footer_work_time_day) : ?>
+									<div class="day_time d-flex ">
+										<time class="days"> <?php echo $footer_work_time_day['days'] ?> </time>
+										<time class="time"> <?php echo $footer_work_time_day['time'] ?> </time>
+									</div>
+									<?php endforeach; ?>
+									</div>
+
 								</div>
-								<?php endforeach; ?>
-								</div>
+								<?php endif; ?>
+								<!-- -->
 
 							</div>
-						<?php endif; ?>
-						</div>
 
+							<?php
+							$to_display = false;
+							?>
+
+
+
+
+						<?php if ( $to_display ) : ?>
 						<div class="social_buttons">
 							<?php if ( $social_facebook ) : ?>
 								<a href=" <?= $social_facebook ?>">
-									<?= $SVG['facebook'] ?>
+									<?= $SVG['facebook_logo'] ?>
 								</a>
 							<?php endif; ?>
 
 							<?php if ( $social_instagram ) : ?>
 								<a href="<?= $social_instagram ?>">
-									<?= $SVG['instagram'] ?>
+									<?= $SVG['instagram_logo'] ?>
 								</a>
 							<?php endif; ?>
 
 							<?php if ( $social_linkedin ) : ?>
 								<a href="<?= $social_linkedin ?>">
-									<?= $SVG['linkedin'] ?>
+									<?= $SVG['linkedin_logo'] ?>
 								</a>
 							<?php endif; ?>
 
 							<?php if ( $social_google ) : ?>
 								<a href="<?= $social_google ?>">
-									<?= $SVG['googleplus'] ?>
+									<?= $SVG['googleplus_logo'] ?>
 								</a>
 							<?php endif; ?>
 						</div>
+						<?php endif ?>
 
-					</div>
+
+
+						</div>
 					</div>
 
 				</div>

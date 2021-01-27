@@ -11,11 +11,17 @@
 		margin-bottom: 30px;
 
 		.price{
+			//width: 100px;
+			//text-align: right;
+			//font-size: 14px;
+			//font-weight: 200;
+			//color: #3B475B;
 			width: 100px;
-			font-size: 14px;
-			font-weight: 200;
-			color: #3B475B;
 			text-align: right;
+			font-size: 18px;
+			font-weight: 200;
+			line-height: 1;
+			color: #000;
 		}
 		.info{
 			width: 100%;
@@ -26,7 +32,7 @@
 
 		h4{
 			margin-bottom: 12px;
-			font-size: 16px;
+			font-size: 18px;
 			font-weight: 400;
 			color: #000;
 		}
@@ -39,9 +45,13 @@
 
 		&--weight{
 			color: #C5B38F;
-			h3{
-				color: #818181;
+			font-size: 16px;
+			@media (min-width: 992px) {
+				font-size: 12px;
 			}
+			//h3{
+			//	color: #818181;
+			//}
 		}
 
 		&--content,

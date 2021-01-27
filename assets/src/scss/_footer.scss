@@ -35,7 +35,8 @@ footer{
 			font-size: 18px;
 			font-weight: 200;
 			color: #fff;
-			margin-bottom: 25px;
+			margin-bottom: 15px;
+			line-height: 1;
 
 			a{
 				color: #C5B38F;
@@ -48,9 +49,10 @@ footer{
 
 		.day_time_wrap{
 			.day_time{
-				margin-bottom: 16px;
+				line-height: 1;
+				margin-bottom: 15px;
 				font-weight: 400;
-				font-size: 18px;
+				font-size: 16px;
 
 				.days{
 					color: #C5B38F;
