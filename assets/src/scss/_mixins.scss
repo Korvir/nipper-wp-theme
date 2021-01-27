@@ -1,0 +1,49 @@
+@mixin flex($direction: row, $items: center, $content: center) {
+    display: flex;
+	flex-direction: $direction;
+	align-items: $items;
+	justify-content: $content;
+}
+@mixin box-shadow() {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+@mixin text-shadow() {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+// custom media
+$media-types: (
+    xs: '(max-width: 320px)',
+    sm: '(max-width: 576px)',
+    md: '(max-width: 768px)',
+    lg: '(max-width: 991px)',
+    xl: '(max-width: 1200px)',
+    hd: '(max-width: 1366px)',
+    rwd: '(max-width: 1440px)',
+    fhd: '(max-width: 1920px)'
+);
+
+@mixin media($media) {
+    @media #{map-get($media-types, $media)} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}

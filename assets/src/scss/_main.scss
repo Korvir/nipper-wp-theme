@@ -1,0 +1,49 @@
+.slick {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .5s linear;
+
+	&-initialized {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+body{
+	color: #818181;
+}
+
+a:not([href]) {
+	cursor: pointer;
+}
+
+.overflow_this{
+	overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: 'Prata', serif;
+}
+
+img.lazyload:not([src]),
+img.lazyloaded:not([src]){
+	visibility: hidden;
+}
+.blur-up{
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	transition: filter 400ms, -webkit-filter 400ms;
+}
+.blur-up.lazyloaded {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+
+
+a{
+	transition: 0.3s hover;
+	&:hover{
+		text-decoration: none;
+	}
+}
