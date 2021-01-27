@@ -17,8 +17,12 @@
 			$(document).find('.mobile-menu').css('left', -100+'%');
 		});
 
-		$('.mobile-menu').on('click', '.menu-item-has-children', function(event){
-			// event.preventDefault();
+		$('.mobile-menu').on('click', '.menu-item a', function(event){
+
+			//close menu
+			$(document).find('body').removeClass('overflow_this');
+			$(document).find('.mobile-menu').css('left', -100+'%');
+			// open submenu
 			$(this).children('.sub-menu').slideToggle('fast');
 			$(this).children('.menu-item-has-children a').toggleClass('after_el_rotated');
 		});
