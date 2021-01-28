@@ -4,15 +4,19 @@
  */
 add_action('init', 'register_cpt_restaurant_menu' );
 
-
-
 /**
  * Register taxonomies
  */
 add_action( 'init', 'register_tax_production_cats' );
 
+/*
+ * Template redirects
+ */
+add_action( 'template_redirect', 'redirect_cpt_singular_posts' );
 
 
+
+# Post types
 function register_cpt_restaurant_menu(){
     register_post_type('restaurant_product', // Register Custom Post Type
         array(
@@ -27,9 +31,6 @@ function register_cpt_restaurant_menu(){
         'supports' => array('title', 'editor', 'thumbnail'), // Go to Dashboard Custom HTML5 Blank post for supports
     ));
 }
-
-
-
 
 
 
@@ -61,4 +62,14 @@ function register_tax_production_cats() {
 	);
 	register_taxonomy( 'production_cats', 'restaurant_product', $args );
 	register_taxonomy_for_object_type( 'production_cats', 'restaurant_product' );
+}
+
+
+
+# Redirects
+function redirect_cpt_singular_posts() {
+	if ( is_singular('restaurant_product') ) {
+		wp_redirect( home_url(), 302 );
+		exit;
+	}
 }
