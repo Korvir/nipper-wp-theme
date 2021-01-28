@@ -13,7 +13,7 @@ if ( function_exists('get_fields') ){
 
 
 		<section class="homepage-banner" id="about_us">
-			<div class="container-fluid px-0 overflow-hidden">
+			<div class="container ">
 				<div class="row d-flex flex-column flex-lg-row">
 					<div class="homepage-banner--content text-center d-flex flex-column align-items-center justify-content-center col-12 col-lg-6">
 						<div class="text-wrapper">

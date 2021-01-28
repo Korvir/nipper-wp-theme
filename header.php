@@ -37,9 +37,8 @@
 					<div class="col-6 col-lg-4 d-flex align-items-center justify-content-start">
 						<div class="logo">
 							<a href="<?php echo home_url(); ?>">
-								<img src="<?php echo $site_logo['sizes']['small'] ?>"
-									 data-src="<?php echo $site_logo['sizes']['medium'] ?>"
-									 class="site_logo w-100 blur-up lazyload"
+								<img src="<?php echo $site_logo['sizes']['medium'] ?>"
+									 class="site_logo w-100"
 									 alt="Logo"
 									 loading="lazy" >
 							</a>
@@ -71,16 +70,17 @@
 		<div class="mobile-menu">
 			<div class="mobile-menu-wrap">
 				<div class="top-bar w-100">
+
 					<a href="<?php echo home_url(); ?>">
-						<img src="<?php echo $site_logo['sizes']['small'] ?>"
-							 data-src="<?php echo $site_logo['sizes']['medium'] ?>"
-							 class="site_logo blur-up lazyload"
+						<img src="<?php echo $site_logo['sizes']['medium'] ?>"
+							 class="site_logo"
 							 alt="Logo"
 							 loading="lazy" >
 					</a>
 					<div class="mobile-menu--close" id="toggle-mobile-menu--close">
 						<?php echo $SVG['mobile_close'] ?>
 					</div>
+
 				</div>
 
 				<?php header_menu(); ?>

@@ -18,7 +18,7 @@
 
 		<footer class="footer" role="contentinfo" id="contacts">
 
-			<div class="container-fluid px-0 overflow-hidden ">
+			<div class="container ">
 				<div class="row d-flex flex-column-reverse flex-lg-row">
 
 					<div class="col-12 col-lg-6">

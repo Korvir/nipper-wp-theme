@@ -7,21 +7,21 @@
 		$('#toggle-mobile-menu').on('click', function(event){
 			event.preventDefault();
 			$(document).find('body').addClass('overflow_this');
-			$(document).find('.mobile-menu').css('left', 0);
+			$(document).find('.mobile-menu').css('right', 0);
 		});
 
 		// Close mobile menu
 		$('#toggle-mobile-menu--close').on('click', function(event){
 			event.preventDefault();
 			$(document).find('body').removeClass('overflow_this');
-			$(document).find('.mobile-menu').css('left', -100+'%');
+			$(document).find('.mobile-menu').css('right', -100+'%');
 		});
 
 		$('.mobile-menu').on('click', '.menu-item a', function(event){
 
 			//close menu
 			$(document).find('body').removeClass('overflow_this');
-			$(document).find('.mobile-menu').css('left', -100+'%');
+			$(document).find('.mobile-menu').css('right', -100+'%');
 			// open submenu
 			$(this).children('.sub-menu').slideToggle('fast');
 			$(this).children('.menu-item-has-children a').toggleClass('after_el_rotated');
@@ -43,15 +43,18 @@
 		// 	return false
 		// } );
 
-		// Smooth scroll to anchor.
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
-				document.querySelector(this.getAttribute('href')).scrollIntoView({
-					behavior: 'smooth'
-				});
+
+		$("a[href^='#']").on('click', function(e) {
+			// prevent default anchor click behavior
+			e.preventDefault();
+
+			// animate
+			$('html, body').animate({
+				scrollTop: $(this.hash).offset().top - 80
+			}, 900, function(){
 			});
 		});
+
 
 	});
 
