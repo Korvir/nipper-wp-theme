@@ -36,7 +36,14 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 					<div class="single-restaurant-product px-xxl-5 col-12 col-lg-6 d-flex align-items-start justify-content-center">
 
 						<div class="info">
-							<h4> <?php echo $s_post->post_title ?> </h4>
+							<div class="info-row d-flex align-items-start justify-content-between">
+								<h4> <?php echo $s_post->post_title ?> </h4>
+								<div class="price">
+									<?php
+									echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
+									?>
+								</div>
+							</div>
 							<div class="single-restaurant-product--content">
 								<?php echo $s_post->post_content ?>
 							</div>
@@ -45,11 +52,6 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 								echo $weight;
 								?>
 							</p>
-						</div>
-						<div class="price">
-							<?php
-							echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
-							?>
 						</div>
 					</div>
 				<?php endforeach; ?>

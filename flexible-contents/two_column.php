@@ -34,20 +34,21 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 							$weight = get_field( 'weight', $s_post->ID );
 							$price 	= get_field( 'price', $s_post->ID );
 							?>
-							<div class="info">
-								<h4> <?php echo $s_post->post_title ?> </h4>
+							<div class="info w-100">
+								<div class="info-row w-100 d-flex align-items-start justify-content-between">
+									<h4> <?php echo $s_post->post_title ?> </h4>
+									<div class="price">
+										<?php
+										echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
+										?>
+									</div>
+								</div>
 								<div class="single-restaurant-product--content">
 									<?php echo $s_post->post_content ?>
 								</div>
 								<div class="single-restaurant-product--weight d-flex ">
 									<?php echo $weight; ?>
-<!--									<h3 class="d-flex align-items-center ml-3 d-lg-none"> --><?php //echo $price . ' ' . $price_currency; ?><!--</h3>-->
 								</div>
-							</div>
-							<div class="price">
-								<?php
-								echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
-								?>
 							</div>
 						</div>
 					<?php endforeach; ?>
@@ -87,20 +88,21 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 							$price = get_field( 'price', $s_post->ID );
 							?>
 
-							<div class="info">
-								<h4> <?php echo $s_post->post_title ?> </h4>
+							<div class="info w-100">
+								<div class="info-row w-100 d-flex align-items-start justify-content-between">
+									<h4> <?php echo $s_post->post_title ?> </h4>
+									<div class="price">
+										<?php
+										echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
+										?>
+									</div>
+								</div>
 								<div class="single-restaurant-product--content">
 									<?php echo $s_post->post_content ?>
 								</div>
 								<div class="single-restaurant-product--weight d-flex">
 									<?php echo $weight; ?>
-<!--									<h3 class="d-flex align-items-center ml-3 d-lg-none"> --><?php //echo $price . ' ' . $price_currency; ?><!--</h3>-->
 								</div>
-							</div>
-							<div class="price">
-								<?php
-								echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
-								?>
 							</div>
 						</div>
 					<?php endforeach; ?>

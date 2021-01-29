@@ -16,30 +16,33 @@
 			//font-size: 14px;
 			//font-weight: 200;
 			//color: #3B475B;
-			width: 100px;
+			font-family: 'Prata', serif;
+			width: 70px;
 			text-align: right;
-			font-size: 18px;
+			font-size: 14px;
 			font-weight: 200;
-			line-height: 1;
+			line-height: 170%;
 			color: #000;
 		}
 		.info{
 			width: 100%;
-			@media (min-width: 992px) {
-				width: calc(100% - 100px);
-			}
+			//@media (min-width: 992px) {
+			//	width: calc(100% - 100px);
+			//}
 		}
 
 		h4{
 			margin-bottom: 12px;
-			font-size: 18px;
+			font-size: 16px;
+			line-height: 140%;
 			font-weight: 400;
 			color: #000;
 		}
 
 		&--content{
-			font-size: 16px;
-			font-weight: 200;
+			font-size: 12px;
+			line-height: 140%;
+			font-weight: 400;
 			color: #818181;
 		}
 
