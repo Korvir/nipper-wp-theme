@@ -1,6 +1,10 @@
 <?php
 $left_col_id    = get_sub_field( 'left_column_tax_title' );
 $right_col_id   = get_sub_field( 'right_column_tax_title' );
+
+$left_col_posts    = get_sub_field( 'left_column_tax_posts' );
+$right_col_posts   = get_sub_field( 'right_column_tax_posts' );
+
 $price_currency = get_field( 'main_currency_symbol', 'options' );
 ?>
 
@@ -12,23 +16,12 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 			<div class="col-12 col-lg-6 px-xxl-5 d-flex flex-column align-items-start justify-content-start ">
 				<?php
 				$tax_obj = get_term_by( 'term_taxonomy_id', $left_col_id );
-				$query_l = new WP_Query( [
-						'post_type'      => 'restaurant_product',
-						'posts_per_page' => - 1,
-						'tax_query'      => array(
-								array(
-										'taxonomy' => 'production_cats',
-										'field'    => 'id',
-										'terms'    => $left_col_id
-								)
-						)
-				] );
 				?>
 
 				<h2> <?php echo $tax_obj->name ?> </h2>
 
-				<?php if ( $query_l->posts ) : ?>
-					<?php foreach ( $query_l->posts as $key => $s_post ) : ?>
+				<?php if ( $left_col_posts ) : ?>
+					<?php foreach ( $left_col_posts as $key => $s_post ) : ?>
 						<div class="single-restaurant-product w-100 d-flex align-items-start justify-content-center">
 							<?php
 							$weight = get_field( 'weight', $s_post->ID );
@@ -62,24 +55,13 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 			<div class="col-12 col-lg-6 px-xxl-5 d-flex flex-column align-items-start justify-content-start ">
 				<?php
 				$tax_obj = get_term_by( 'term_taxonomy_id', $right_col_id );
-				$query_r = new WP_Query( [
-						'post_type'      => 'restaurant_product',
-						'posts_per_page' => - 1,
-						'tax_query'      => array(
-								array(
-										'taxonomy' => 'production_cats',
-										'field'    => 'id',
-										'terms'    => $right_col_id
-								)
-						)
-				] );
-				$counter = $query_r->post_count;
+				$counter = count( $right_col_posts );
 				?>
 
 				<h2> <?php echo $tax_obj->name ?> </h2>
 
-				<?php if ( $query_r->posts ) : ?>
-					<?php foreach ( $query_r->posts as $key => $s_post ) :
+				<?php if ( $right_col_posts ) : ?>
+					<?php foreach ( $right_col_posts as $key => $s_post ) :
 						$class = $counter-1 == $key ? 'mb-0' : '';
 						?>
 						<div class="single-restaurant-product w-100 d-flex align-items-start justify-content-center <?= $class ?> ">
