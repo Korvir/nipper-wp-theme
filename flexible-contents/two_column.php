@@ -1,11 +1,13 @@
 <?php
-$left_col_id    = get_sub_field( 'left_column_tax_title' );
-$right_col_id   = get_sub_field( 'right_column_tax_title' );
+if ( function_exists('get_field') ) {
+	$left_col_id    = get_sub_field( 'left_column_tax_title' );
+	$right_col_id   = get_sub_field( 'right_column_tax_title' );
 
-$left_col_posts    = get_sub_field( 'left_column_tax_posts' );
-$right_col_posts   = get_sub_field( 'right_column_tax_posts' );
+	$left_col_posts    = get_sub_field( 'left_column_tax_posts' );
+	$right_col_posts   = get_sub_field( 'right_column_tax_posts' );
 
-$price_currency = get_field( 'main_currency_symbol', 'options' );
+	$price_currency = get_field( 'main_currency_symbol', 'options' );
+}
 ?>
 
 
@@ -55,12 +57,13 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 			<div class="col-12 col-lg-6 px-xxl-5 d-flex flex-column align-items-start justify-content-start ">
 				<?php
 				$tax_obj = get_term_by( 'term_taxonomy_id', $right_col_id );
-				$counter = count( $right_col_posts );
 				?>
 
 				<h2> <?php echo $tax_obj->name ?> </h2>
 
-				<?php if ( $right_col_posts ) : ?>
+				<?php if ( $right_col_posts ) :
+					$counter = count( $right_col_posts );
+					?>
 					<?php foreach ( $right_col_posts as $key => $s_post ) :
 						$class = $counter-1 == $key ? 'mb-0' : '';
 						?>
