@@ -1,0 +1,11 @@
+{
+  "admin_pages": [
+	"toplevel_page_theme-general-settings"
+  ],
+  "taxonomies": {
+	"production_cats" : {}
+  },
+  "post_types": {
+	"restaurant_product": {}
+  }
+}
