@@ -40,9 +40,13 @@ if ( function_exists('get_field') ) {
 										?>
 									</div>
 								</div>
+
+								<?php if ( !empty( $s_post->post_content ) ) : ?>
 								<div class="single-restaurant-product--content">
-									<?php echo wpm_translate_string( $s_post->post_content, $cur_lang )  ?>
+									<?php echo wpm_translate_string( $s_post->post_content, $cur_lang ); ?>
 								</div>
+								<?php endif; ?>
+
 								<div class="single-restaurant-product--weight d-flex ">
 									<?php echo wpm_translate_string( $weight, $cur_lang );; ?>
 								</div>
@@ -84,9 +88,13 @@ if ( function_exists('get_field') ) {
 										?>
 									</div>
 								</div>
-								<div class="single-restaurant-product--content">
-									<?php echo wpm_translate_string( $s_post->post_content, $cur_lang )  ?>
-								</div>
+
+								<?php if ( !empty( $s_post->post_content ) ) : ?>
+									<div class="single-restaurant-product--content">
+										<?php echo wpm_translate_string( $s_post->post_content, $cur_lang ); ?>
+									</div>
+								<?php endif; ?>
+
 								<div class="single-restaurant-product--weight d-flex">
 									<?php echo wpm_translate_string( $weight, $cur_lang );; ?>
 								</div>

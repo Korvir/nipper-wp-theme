@@ -1,5 +1,6 @@
 <?php
 $main_col_id    = get_sub_field( 'column_tax_title' );
+$main_col_posts = get_sub_field( 'column_tax_posts' );
 $price_currency = get_field( 'main_currency_symbol', 'options' );
 
 $cur_lang    = wpm_get_language();
@@ -13,25 +14,14 @@ $cur_lang    = wpm_get_language();
 
 			<?php
 			$tax_obj = get_term_by( 'term_taxonomy_id', $main_col_id );
-			$query_m = new WP_Query( [
-					'post_type'      => 'restaurant_product',
-					'posts_per_page' => - 1,
-					'tax_query'      => array(
-							array(
-									'taxonomy' => 'production_cats',
-									'field'    => 'id',
-									'terms'    => $main_col_id
-							)
-					)
-			] );
 			?>
 
 			<div class="col-12 d-flex px-xxl-5 flex-wrap align-items-start justify-content-start">
 				<h2 class="w-100"> <?php echo $tax_obj->name ?> </h2>
 			</div>
 
-			<?php if ( $query_m->posts ) : ?>
-				<?php foreach ( $query_m->posts as $s_post ) :
+			<?php if ( $main_col_posts ) : ?>
+				<?php foreach ( $main_col_posts as $s_post ) :
 					$weight = get_field( 'weight', $s_post->ID );
 					$price = get_field( 'price', $s_post->ID );
 					?>
@@ -46,9 +36,13 @@ $cur_lang    = wpm_get_language();
 									?>
 								</div>
 							</div>
-							<div class="single-restaurant-product--content">
-								<?php echo wpm_translate_string( $s_post->post_content, $cur_lang )  ?>
-							</div>
+
+							<?php if ( !empty( $s_post->post_content ) ) : ?>
+								<div class="single-restaurant-product--content">
+									<?php echo wpm_translate_string( $s_post->post_content, $cur_lang ); ?>
+								</div>
+							<?php endif; ?>
+
 							<p class="single-restaurant-product--weight">
 								<?php
 								echo wpm_translate_string( $weight, $cur_lang );
