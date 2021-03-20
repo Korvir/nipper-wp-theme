@@ -19,7 +19,7 @@
 			font-family: 'Prata', serif;
 			width: 70px;
 			text-align: right;
-			font-size: 14px;
+			font-size: 16px;
 			font-weight: 200;
 			line-height: 170%;
 			color: #000;
@@ -32,15 +32,16 @@
 		}
 
 		h4{
+			width: calc(100% - 70px);
 			margin-bottom: 12px;
-			font-size: 16px;
+			font-size: 18px;
 			line-height: 140%;
 			font-weight: 400;
 			color: #000;
 		}
 
 		&--content{
-			font-size: 12px;
+			font-size: 14px;
 			line-height: 140%;
 			font-weight: 400;
 			color: #818181;
@@ -59,7 +60,7 @@
 
 		&--content,
 		&--weight{
-			margin-bottom: 12px;
+			margin-bottom: 5px;
 		}
 
 

@@ -38,7 +38,7 @@
 						<div class="logo">
 							<a href="<?php echo home_url(); ?>">
 								<img src="<?php echo $site_logo['sizes']['medium'] ?>"
-									 class="site_logo w-100"
+									 class="site_logo w-100 lazyloaded"
 									 alt="Logo"
 									 loading="lazy" >
 							</a>

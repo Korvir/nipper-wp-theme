@@ -2,6 +2,7 @@
 /* Template Name: Главная страница */
 get_header();
 global $SVG;
+$cur_lang    = wpm_get_language();
 
 if ( function_exists('get_fields') ){
 	$home_fields = get_fields();
@@ -17,7 +18,7 @@ if ( function_exists('get_fields') ){
 				<div class="row d-flex flex-column flex-lg-row">
 					<div class="homepage-banner--content text-center d-flex flex-column align-items-center justify-content-center col-12 col-lg-6">
 						<div class="text-wrapper">
-							<?php echo $home_fields['banner-content'] ?>
+							<?php echo wpm_translate_string( $home_fields['banner-content'], $cur_lang ) ?>
 						</div>
 						<div class="quotes w-100  d-flex align-items-center justify-content-center justify-content-lg-end">
 							<?php echo $SVG['quotes'] ?>

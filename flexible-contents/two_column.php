@@ -7,6 +7,8 @@ if ( function_exists('get_field') ) {
 	$right_col_posts   = get_sub_field( 'right_column_tax_posts' );
 
 	$price_currency = get_field( 'main_currency_symbol', 'options' );
+
+	$cur_lang    = wpm_get_language();
 }
 ?>
 
@@ -31,18 +33,18 @@ if ( function_exists('get_field') ) {
 							?>
 							<div class="info w-100">
 								<div class="info-row w-100 d-flex align-items-start justify-content-between">
-									<h4> <?php echo $s_post->post_title ?> </h4>
+									<h4> <?php echo wpm_translate_string( $s_post->post_title, $cur_lang ) ?> </h4>
 									<div class="price">
 										<?php
-										echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
+										echo wpm_translate_string( $price, $cur_lang ) . ' ' . '<span class="currency">' . wpm_translate_string( $price_currency, $cur_lang ) . '<span>';
 										?>
 									</div>
 								</div>
 								<div class="single-restaurant-product--content">
-									<?php echo $s_post->post_content ?>
+									<?php echo wpm_translate_string( $s_post->post_content, $cur_lang )  ?>
 								</div>
 								<div class="single-restaurant-product--weight d-flex ">
-									<?php echo $weight; ?>
+									<?php echo wpm_translate_string( $weight, $cur_lang );; ?>
 								</div>
 							</div>
 						</div>
@@ -75,18 +77,18 @@ if ( function_exists('get_field') ) {
 
 							<div class="info w-100">
 								<div class="info-row w-100 d-flex align-items-start justify-content-between">
-									<h4> <?php echo $s_post->post_title ?> </h4>
+									<h4> <?php echo wpm_translate_string( $s_post->post_title, $cur_lang ); ?> </h4>
 									<div class="price">
 										<?php
-										echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
+										echo wpm_translate_string( $price, $cur_lang ) . ' ' . '<span class="currency">' . wpm_translate_string( $price_currency, $cur_lang ) . '<span>';
 										?>
 									</div>
 								</div>
 								<div class="single-restaurant-product--content">
-									<?php echo $s_post->post_content ?>
+									<?php echo wpm_translate_string( $s_post->post_content, $cur_lang )  ?>
 								</div>
 								<div class="single-restaurant-product--weight d-flex">
-									<?php echo $weight; ?>
+									<?php echo wpm_translate_string( $weight, $cur_lang );; ?>
 								</div>
 							</div>
 						</div>

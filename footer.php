@@ -1,5 +1,7 @@
 		<?php
 		global $SVG;
+		$cur_lang    = wpm_get_language();
+
 		$footer_big_image = get_field( 'footer_big_image', 'options');
 		$footer_logo = get_field( 'footer_logo', 'options');
 		$footer_title = get_field( 'footer_title', 'options');
@@ -40,7 +42,7 @@
 								 alt="logo"
 								 loading="lazy" >
 
-							<h3> <?php echo $footer_title ?> </h3>
+							<h3> <?php echo wpm_translate_string( $footer_title, $cur_lang ) ?> </h3>
 
 							<div class="contacts-inner-info w-100">
 
@@ -50,10 +52,10 @@
 									<span class="d-flex align-items-end justify-content-start svg"> <?php echo $SVG['address'] ?></span>
 									<?php if ( $footer_address_url ) : ?>
 										<a href="<?php echo $footer_address_url ?>" target="_blank">
-											<?php echo $footer_address ?>
+											<?php echo wpm_translate_string( $footer_address, $cur_lang ) ?>
 										</a>
 									<?php else: ?>
-										<?php echo $footer_address ?>
+										<?php echo wpm_translate_string( $footer_address, $cur_lang ) ?>
 									<?php endif; ?>
 								</p>
 								<?php endif; ?>
@@ -64,7 +66,7 @@
 									<p class="d-flex">
 										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['phone'] ?></span>
 										<a href="<?php echo tel_href($footer_phone) ?>">
-											<?php echo $footer_phone ?>
+											<?php echo wpm_translate_string( $footer_phone, $cur_lang ) ?>
 										</a>
 									</p>
 								<?php endif; ?>
@@ -76,7 +78,7 @@
 									<p class="d-flex">
 										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['instagram_logo'] ?></span>
 										<a href="<?php echo $social_instagram['url'] ?>">
-											<?php echo $social_instagram['title'] ?>
+											<?php echo wpm_translate_string( $social_instagram['title'], $cur_lang ) ?>
 										</a>
 									</p>
 								<?php endif; ?>
@@ -86,7 +88,7 @@
 									<p class="d-flex">
 										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['facebook_logo'] ?></span>
 										<a href="<?php echo $social_facebook['url'] ?>">
-											<?php echo $social_facebook['title'] ?>
+											<?php echo wpm_translate_string( $social_facebook['title'], $cur_lang ) ?>
 										</a>
 									</p>
 								<?php endif; ?>
@@ -96,7 +98,7 @@
 									<p class="d-flex">
 										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['linkedin_logo'] ?></span>
 										<a href="<?php echo $social_linkedin['url'] ?>">
-											<?php echo $social_linkedin['title'] ?>
+											<?php echo wpm_translate_string( $social_linkedin['title'], $cur_lang ) ?>
 										</a>
 									</p>
 								<?php endif; ?>
@@ -106,7 +108,7 @@
 									<p class="d-flex">
 										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['googleplus_logo'] ?></span>
 										<a href="<?php echo $social_google['url'] ?>">
-											<?php echo $social_google['title'] ?>
+											<?php echo wpm_translate_string( $social_google['title'], $cur_lang ) ?>
 										</a>
 									</p>
 								<?php endif; ?>
@@ -118,7 +120,7 @@
 									<p class="d-flex">
 										<span class="d-flex align-items-end justify-content-start svg"><?php echo $SVG['email'] ?></span>
 										<a href="<?php echo mail_href($footer_email) ?>">
-											<?php echo $footer_email ?>
+											<?php echo wpm_translate_string( $footer_email, $cur_lang ) ?>
 										</a>
 									</p>
 								<?php endif; ?>
@@ -132,8 +134,8 @@
 									<div class=" d-flex flex-column day_time_wrap w-100">
 									<?php foreach ( $footer_work_time  as $footer_work_time_day) : ?>
 									<div class="day_time d-flex ">
-										<time class="days"> <?php echo $footer_work_time_day['days'] ?> </time>
-										<time class="time"> <?php echo $footer_work_time_day['time'] ?> </time>
+										<time class="days"> <?php echo wpm_translate_string( $footer_work_time_day['days'], $cur_lang ) ?> </time>
+										<time class="time"> <?php echo wpm_translate_string( $footer_work_time_day['time'], $cur_lang ) ?> </time>
 									</div>
 									<?php endforeach; ?>
 									</div>

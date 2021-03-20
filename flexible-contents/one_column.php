@@ -1,6 +1,8 @@
 <?php
 $main_col_id    = get_sub_field( 'column_tax_title' );
 $price_currency = get_field( 'main_currency_symbol', 'options' );
+
+$cur_lang    = wpm_get_language();
 ?>
 
 
@@ -37,19 +39,19 @@ $price_currency = get_field( 'main_currency_symbol', 'options' );
 
 						<div class="info">
 							<div class="info-row d-flex align-items-start justify-content-between">
-								<h4> <?php echo $s_post->post_title ?> </h4>
+								<h4> <?php echo wpm_translate_string( $s_post->post_title, $cur_lang ) ?> </h4>
 								<div class="price">
 									<?php
-									echo $price . ' ' . '<span class="currency">' . $price_currency . '<span>';
+									echo wpm_translate_string( $price, $cur_lang ) . ' ' . '<span class="currency">' . wpm_translate_string( $price_currency, $cur_lang ) . '<span>';
 									?>
 								</div>
 							</div>
 							<div class="single-restaurant-product--content">
-								<?php echo $s_post->post_content ?>
+								<?php echo wpm_translate_string( $s_post->post_content, $cur_lang )  ?>
 							</div>
 							<p class="single-restaurant-product--weight">
 								<?php
-								echo $weight;
+								echo wpm_translate_string( $weight, $cur_lang );
 								?>
 							</p>
 						</div>
