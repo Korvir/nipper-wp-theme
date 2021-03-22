@@ -1,3 +1,5 @@
+$font_calibri_path: 'fonts/';
+
 @font-face {
 	font-family: 'Prata', serif;
 	font-weight: normal;
@@ -11,3 +13,22 @@
 	font-style: normal;
 }
 
+
+
+@font-face {
+	font-family: 'Calibri Regular';
+	src: url( "#{$font_calibri_path}Calibri.eot?#iefix") format('embedded-opentype'),
+	url( "#{$font_calibri_path}Calibri.woff") format('woff'),
+	url( "#{$font_calibri_path}Calibri.ttf") format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Calibri Bold';
+	src: url( "#{$font_calibri_path}Calibri-Bold.eot?#iefix") format('embedded-opentype'),
+	url( "#{$font_calibri_path}Calibri-Bold.woff") format('woff'),
+	url( "#{$font_calibri_path}Calibri-Bold.ttf") format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
