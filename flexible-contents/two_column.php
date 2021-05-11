@@ -1,82 +1,84 @@
 <?php
-if ( function_exists('get_field') ) {
-	$left_col_id    = get_sub_field( 'left_column_tax_title' );
-	$right_col_id   = get_sub_field( 'right_column_tax_title' );
+if ( function_exists( 'get_field' ) )
+{
+	$anchor			= get_sub_field( 'anchor' );
+	$left_col_id  = get_sub_field( 'left_column_tax_title' );
+	$right_col_id = get_sub_field( 'right_column_tax_title' );
 
-	$left_col_posts    = get_sub_field( 'left_column_tax_posts' );
-	$right_col_posts   = get_sub_field( 'right_column_tax_posts' );
+	$left_col_posts  = get_sub_field( 'left_column_tax_posts' );
+	$right_col_posts = get_sub_field( 'right_column_tax_posts' );
 
 	$price_currency = get_field( 'main_currency_symbol', 'options' );
 
-	$cur_lang    = wpm_get_language();
 }
+$cur_lang = wpm_get_language();
 ?>
 
+<div class="homepage-restaurant-menu--wrapper w-100" id="<?php echo $anchor ?>">
+	<div class="container two-columns-part" >
+		<div class="row">
 
-<div class="container two-columns-part">
-	<div class="row">
+			<?php if ( $left_col_id ) : ?>
+				<div class="col-12 col-lg-6 px-xxl-5 d-flex flex-column align-items-start justify-content-start ">
+					<?php
+					$tax_obj = get_term_by( 'term_taxonomy_id', $left_col_id );
+					?>
 
-		<?php if ( $left_col_id ) : ?>
-			<div class="col-12 col-lg-6 px-xxl-5 d-flex flex-column align-items-start justify-content-start ">
-				<?php
-				$tax_obj = get_term_by( 'term_taxonomy_id', $left_col_id );
-				?>
+					<h2> <?php echo $tax_obj->name ?> </h2>
 
-				<h2> <?php echo $tax_obj->name ?> </h2>
+					<?php if ( $left_col_posts ) : ?>
+						<?php foreach ( $left_col_posts as $key => $s_post ) : ?>
+							<div class="single-restaurant-product w-100 d-flex align-items-start justify-content-center">
+								<?php
+								$weight = get_field( 'weight', $s_post->ID );
+								$price  = get_field( 'price', $s_post->ID );
+								?>
+								<div class="info w-100">
+									<div class="info-row w-100 d-flex align-items-start justify-content-between">
+										<h4> <?php echo wpm_translate_string( $s_post->post_title, $cur_lang ) ?> </h4>
+										<div class="price">
+											<?php
+											echo wpm_translate_string( $price, $cur_lang ) . ' ' . '<span class="currency">' . wpm_translate_string( $price_currency, $cur_lang ) . '<span>';
+											?>
+										</div>
+									</div>
 
-				<?php if ( $left_col_posts ) : ?>
-					<?php foreach ( $left_col_posts as $key => $s_post ) : ?>
-						<div class="single-restaurant-product w-100 d-flex align-items-start justify-content-center">
-							<?php
-							$weight = get_field( 'weight', $s_post->ID );
-							$price 	= get_field( 'price', $s_post->ID );
-							?>
-							<div class="info w-100">
-								<div class="info-row w-100 d-flex align-items-start justify-content-between">
-									<h4> <?php echo wpm_translate_string( $s_post->post_title, $cur_lang ) ?> </h4>
-									<div class="price">
-										<?php
-										echo wpm_translate_string( $price, $cur_lang ) . ' ' . '<span class="currency">' . wpm_translate_string( $price_currency, $cur_lang ) . '<span>';
-										?>
+									<?php if ( ! empty( $s_post->post_content ) ) : ?>
+										<div class="single-restaurant-product--content">
+											<?php echo wpm_translate_string( $s_post->post_content, $cur_lang ); ?>
+										</div>
+									<?php endif; ?>
+
+									<div class="single-restaurant-product--weight d-flex ">
+										<?php echo wpm_translate_string( $weight, $cur_lang );; ?>
 									</div>
 								</div>
-
-								<?php if ( !empty( $s_post->post_content ) ) : ?>
-								<div class="single-restaurant-product--content">
-									<?php echo wpm_translate_string( $s_post->post_content, $cur_lang ); ?>
-								</div>
-								<?php endif; ?>
-
-								<div class="single-restaurant-product--weight d-flex ">
-									<?php echo wpm_translate_string( $weight, $cur_lang );; ?>
-								</div>
 							</div>
-						</div>
-					<?php endforeach; ?>
-				<?php endif; ?>
+						<?php endforeach; ?>
+					<?php endif; ?>
 
-			</div>
-		<?php endif; ?>
+				</div>
+			<?php endif; ?>
 
 
-		<?php if ( $right_col_id ) : ?>
-			<div class="col-12 col-lg-6 px-xxl-5 d-flex flex-column align-items-start justify-content-start ">
-				<?php
-				$tax_obj = get_term_by( 'term_taxonomy_id', $right_col_id );
-				?>
-
-				<h2> <?php echo $tax_obj->name ?> </h2>
-
-				<?php if ( $right_col_posts ) :
-					$counter = count( $right_col_posts );
+			<?php if ( $right_col_id ) : ?>
+				<div class="col-12 col-lg-6 px-xxl-5 d-flex flex-column align-items-start justify-content-start ">
+					<?php
+					$tax_obj = get_term_by( 'term_taxonomy_id', $right_col_id );
 					?>
-					<?php foreach ( $right_col_posts as $key => $s_post ) :
-						$class = $counter-1 == $key ? 'mb-0' : '';
+
+					<h2> <?php echo $tax_obj->name ?> </h2>
+
+					<?php if ( $right_col_posts ) :
+						$counter = count( $right_col_posts );
+						?>
+						<?php foreach ( $right_col_posts as $key => $s_post ) :
+						$class = $counter - 1 == $key ? 'mb-0' : '';
 						?>
 						<div class="single-restaurant-product w-100 d-flex align-items-start justify-content-center <?= $class ?> ">
 							<?php
 							$weight = get_field( 'weight', $s_post->ID );
-							$price = get_field( 'price', $s_post->ID );
+							$price  = get_field( 'price', $s_post->ID );
 							?>
 
 							<div class="info w-100">
@@ -89,7 +91,7 @@ if ( function_exists('get_field') ) {
 									</div>
 								</div>
 
-								<?php if ( !empty( $s_post->post_content ) ) : ?>
+								<?php if ( ! empty( $s_post->post_content ) ) : ?>
 									<div class="single-restaurant-product--content">
 										<?php echo wpm_translate_string( $s_post->post_content, $cur_lang ); ?>
 									</div>
@@ -101,10 +103,11 @@ if ( function_exists('get_field') ) {
 							</div>
 						</div>
 					<?php endforeach; ?>
-				<?php endif; ?>
-			</div>
-		<?php endif; ?>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 
+		</div>
 	</div>
 </div>
 

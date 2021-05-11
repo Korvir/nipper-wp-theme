@@ -98,6 +98,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_6094ef666b458",
+                            "label": "Якорь",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_600fd2f8b206f",
                             "label": "Левая колонка Категория",
                             "name": "left_column_tax_title",
@@ -204,6 +223,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_6094ef776b459",
+                            "label": "Якорь",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_600fd385b2071",
                             "label": "Заголовок Категории",
                             "name": "column_tax_title",
@@ -276,5 +314,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1612008963
+    "modified": 1620373398
 }

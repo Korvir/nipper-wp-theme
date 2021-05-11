@@ -20,6 +20,11 @@ function theme_scripts()
 	wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/assets/dist/lazysizes.js', array(), THIS_THEME_VERSION, true );
 	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/dist/app.js', array(), $ver, true);
 
+	wp_localize_script( 'app', 'nipper_vars',
+		array(
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		) );
+
 }
 
 

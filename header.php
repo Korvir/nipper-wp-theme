@@ -34,7 +34,7 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-6 col-lg-4 d-flex align-items-center justify-content-start">
+					<div class="col-6 col-lg-3 d-flex align-items-center justify-content-start">
 						<div class="logo">
 							<a href="<?php echo home_url(); ?>">
 								<img src="<?php echo $site_logo['sizes']['medium'] ?>"
@@ -45,13 +45,13 @@
 						</div>
 					</div>
 
-					<div class="col-lg-4 d-none d-lg-flex align-items-center justify-content-center " >
+					<div class="col-lg-7 d-none d-lg-flex align-items-center justify-content-center " >
 						<nav class="nav" role="navigation">
 							<?php header_menu(); ?>
 						</nav>
 					</div>
 
-					<div class="col-5 col-lg-4 d-flex align-items-center justify-content-end">
+					<div class="col-5 col-lg-2 d-flex align-items-center justify-content-end">
 						<?php echo lang_switcher() ?>
 					</div>
 

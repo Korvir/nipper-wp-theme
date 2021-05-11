@@ -32,7 +32,7 @@ header{
 				text-transform: uppercase;
 				a,
 				a:not([href]){
-					font-weight: 600;
+					//font-weight: 600;
 					transition: 0.3s hover;
 					&:hover{
 						color: #3B475B;
@@ -63,7 +63,7 @@ header{
 				}
 				a,
 				a:not([href]){
-					font-weight: 600;
+					//font-weight: 600;
 					transition: 0.3s hover;
 					&:hover{
 						color: #3B475B;
@@ -84,16 +84,19 @@ header{
 						flex-direction: revert;
 						background-color: #fff;
 						flex-wrap: wrap;
-						width: 300px;
+						width: 200px;
 						transform: translateX(-50%);
 						padding: 15px;
 						list-style: none;
 						z-index: 30;
 						border-radius: 5px;
 						>li{
-							width: 50%;
+							width: 100%;
 							padding: 0 5px;
-							margin-bottom: 10px;
+							margin-bottom: 15px;
+							&:last-child{
+								margin-bottom: 0;
+							}
 						}
 					}
 				}
@@ -217,19 +220,25 @@ header{
 			//padding-top: 20px;
 			a{
 				font-size: 1.875em;
+				&:hover{
+					color: #3B475B;
+				}
 			}
 			.sub-menu{
 				display: none;
-				margin-top: 20px;
+				//margin-top: 20px;
 				padding: 0 25px;
 				width: 100%;
 
 				li{
 					width: 100%;
-					margin: 20px 0;
+					margin: 20px 0 0;
 					list-style: none;
 					a{
 						font-weight: 200;
+						&:hover{
+							color: #3B475B;
+						}
 					}
 				}
 			}
@@ -250,10 +259,11 @@ header{
 					top: 12px;
 					right: -20px;
 					transition: 0.3s hover;
-					transform: rotate( -45deg );
+					transform: rotate( -135deg );
 					opacity: 0.7;
 				}
 				&:hover{
+					color: #3B475B;
 					&:after{
 						opacity: 1;
 					}
@@ -261,14 +271,15 @@ header{
 			}
 
 			a.after_el_rotated{
+				color: #3B475B;
 				&:after{
-					transform: rotate( -135deg );
+					transform: rotate( -45deg );
 				}
 			}
 
 			a,
 			a:not([href]){
-				font-weight: 600;
+				//font-weight: 600;
 				transition: 0.3s hover;
 				&:hover{
 					color: #3B475B;

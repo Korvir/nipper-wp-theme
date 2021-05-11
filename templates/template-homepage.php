@@ -49,9 +49,7 @@ if ( function_exists('get_fields') ){
 
 					if( file_exists( $inclusion ) )
 					{
-						echo '<div class="homepage-restaurant-menu--wrapper w-100">';
 						include( $inclusion );
-						echo '</div>';
 					}
 
 				endwhile;

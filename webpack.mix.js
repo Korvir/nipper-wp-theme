@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-require('laravel-mix-purgecss');
+// require('laravel-mix-purgecss');
 
 mix
 	.js( 'assets/src/js/lazysizes.js', 'assets/dist/lazysizes.js')
@@ -10,24 +10,24 @@ mix
 	.sass('assets/src/scss/_vendors.scss', 'assets/dist/bootstrap.css')
     .options({
         processCssUrls: false
-    })
+    });
 
-	// Purge
-	.purgeCss(
-		{
-			enabled: mix.inProduction(),
-			extend:{
-				content: [
-					"**/*.php",
-					"**/*.html",
-					"**/*.vue",
-					"**/*.twig",
-					"assets/src/**/*.js",
-					"assets/src/**/*.jsx",
-					"assets/src/**/*.ts",
-					"assets/src/**/*.tsx",
-				],
-				defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
-			}
-		}
-	);
+	// // Purge
+	// .purgeCss(
+	// 	{
+	// 		enabled: mix.inProduction(),
+	// 		extend:{
+	// 			content: [
+	// 				"**/*.php",
+	// 				"**/*.html",
+	// 				"**/*.vue",
+	// 				"**/*.twig",
+	// 				"assets/src/**/*.js",
+	// 				"assets/src/**/*.jsx",
+	// 				"assets/src/**/*.ts",
+	// 				"assets/src/**/*.tsx",
+	// 			],
+	// 			defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
+	// 		}
+	// 	}
+	// );

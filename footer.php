@@ -2,18 +2,22 @@
 		global $SVG;
 		$cur_lang    = wpm_get_language();
 
-		$footer_big_image = get_field( 'footer_big_image', 'options');
-		$footer_logo = get_field( 'footer_logo', 'options');
-		$footer_title = get_field( 'footer_title', 'options');
-		$footer_address = get_field( 'footer_address', 'options');
-		$footer_address_url = get_field( 'footer_address_url', 'options');
-		$footer_phone = get_field( 'footer_phone', 'options');
-		$footer_email = get_field( 'footer_email', 'options');
-		$footer_work_time = get_field( 'footer_work_time', 'options');
-		$social_facebook = get_field( 'social_facebook', 'options');
-		$social_instagram = get_field( 'social_instagram', 'options');
-		$social_linkedin = get_field( 'social_linkedin', 'options');
-		$social_google = get_field( 'social_google', 'options');
+		if ( function_exists('get_field') )
+		{
+			$footer_big_image = get_field( 'footer_big_image', 'options');
+			$footer_logo = get_field( 'footer_logo', 'options');
+			$footer_title = get_field( 'footer_title', 'options');
+			$footer_address = get_field( 'footer_address', 'options');
+			$footer_address_url = get_field( 'footer_address_url', 'options');
+			$footer_phone = get_field( 'footer_phone', 'options');
+			$footer_email = get_field( 'footer_email', 'options');
+			$footer_work_time = get_field( 'footer_work_time', 'options');
+			$social_facebook = get_field( 'social_facebook', 'options');
+			$social_instagram = get_field( 'social_instagram', 'options');
+			$social_linkedin = get_field( 'social_linkedin', 'options');
+			$social_google = get_field( 'social_google', 'options');
+		}
+
 		?>
 
 
@@ -190,6 +194,13 @@
 			</div>
 
 		</footer>
+
+		<?php
+		get_template_part( '/components/modal', 'review');
+
+		get_template_part( '/components/modal', 'response' );
+		?>
+
 
 
 		<?php wp_footer(); ?>
