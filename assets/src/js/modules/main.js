@@ -20,7 +20,7 @@
 
 		// Mobile menu actions
 		$('.mobile-menu').on('click', '.menu-item:not(.menu-item-has-children) > a', function(event){
-			event.preventDefault();
+			// event.preventDefault();
 
 			//close menu
 			$(document).find('body').removeClass('overflow_this');
@@ -34,7 +34,7 @@
 
 		// Mobile menu actions
 		$('.mobile-menu').on('click', '.menu-item-has-children a', function(event){
-			event.preventDefault();
+			// event.preventDefault();
 
 			// open submenu
 			$(this).parents('.menu-item').children('.sub-menu').slideToggle('fast');

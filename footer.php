@@ -37,11 +37,12 @@
 						</div>
 					</div>
 
+
 					<div class="col-12 col-lg-6 contacts">
 						<div class="contacts-inner w-100 d-flex flex-column align-items-center">
 
 							<img src="<?php echo $footer_logo['sizes']['thumbnail'] ?>"
-								 data-src="<?php echo $footer_logo['sizes']['medium'] ?>"
+								 data-src="<?php echo $footer_logo['url'] ?>"
 								 class="footer-logo w-100 blur-up lazyload"
 								 alt="logo"
 								 loading="lazy" >

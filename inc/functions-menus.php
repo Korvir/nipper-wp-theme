@@ -2,6 +2,7 @@
 add_action( 'after_setup_theme', 'theme_register_nav_menu' );
 function theme_register_nav_menu() {
 	register_nav_menu( 'main-menu', 'Main Menu' );
+	register_nav_menu( 'restoran-menu', 'Restoran Menu' );
 }
 
 
@@ -10,6 +11,30 @@ function header_menu(){
 	wp_nav_menu(
 		array(
 			'theme_location'  => 'main-menu',
+			'menu'            => '',
+			'container'       => 'div',
+			'container_class' => 'menu-{menu slug}-container',
+			'container_id'    => '',
+			'menu_class'      => 'menu',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => ''
+		)
+	);
+}
+
+# Menu list
+function restoran_menu(){
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'restoran-menu',
 			'menu'            => '',
 			'container'       => 'div',
 			'container_class' => 'menu-{menu slug}-container',

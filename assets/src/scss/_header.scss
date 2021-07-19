@@ -1,5 +1,5 @@
 header{
-	height: 80px;
+	//height: 80px;
 	top: 0;
 	z-index: 9;
 
@@ -28,7 +28,8 @@ header{
 			> li{
 				@include flex( row, center, center);
 				margin: 0 15px;
-				height: 80px;
+				padding: 1.5rem 0;
+				//height: 80px;
 				text-transform: uppercase;
 				a,
 				a:not([href]){
@@ -41,6 +42,7 @@ header{
 
 			}
 			li.menu-item-has-children{
+
 				position: relative;
 				padding-right: 16px;
 				&:after{
@@ -244,6 +246,12 @@ header{
 			}
 		}
 		.menu-item-has-children{
+			display: block;
+
+			@include media(lg){
+				display: none;
+			}
+
 			&:after{
 				content: none;
 			}
@@ -288,4 +296,62 @@ header{
 		}
 	}
 
+}
+
+#mobileMenuContent{
+	ul{
+		padding: 0;
+		list-style: none;
+
+		li{
+			@include flex(row, center, center);
+			width: 100%;
+
+			a{
+				padding: 1em;
+				margin: 0 0.5em;
+				border-bottom: 1px solid #F1F3F5;
+				width: 100%;
+				text-align: center;
+				font-size: 18px;
+				color: #3a485a;
+				&:last-child{
+					border-bottom: none;
+				}
+			}
+
+		}
+
+	}
+}
+
+.restoran-menu-block{
+	background-color: #F1F3F5;
+}
+
+
+.restoran-menu-btn{
+	font-weight: bold;
+	border-radius: 0;
+	padding: 1em;
+	width: 100%;
+	max-width: 250px;
+	margin: 1em auto;
+	transition: 0.3s border-color;
+	text-transform: uppercase;
+	background-color: #3B475B;
+	border: 2px solid #3B475B;;
+	color: #C5B38F;
+	&:hover{
+		border-color: #C5B38F;
+	}
+
+}
+
+//.restoran-menu-btn{
+//	background-color: #C5B38F;
+//	color: #3B475B;
+//}
+
+.restoran-menu-btn.collapsed{
 }
