@@ -70,40 +70,47 @@ if ( function_exists( 'get_field' ) ) {
 </header>
 
 
+
 <div class="restoran-menu-block">
-	<div class="container d-lg-none">
 
-	<div class="row d-flex align-items-center justify-content-center">
-		<button class="navbar-toggler restoran-menu-btn collapsed"
-				type="button"
-				data-toggle="collapse"
-				data-target="#mobileMenuContent"
-				aria-controls="mobileMenuContent"
-				aria-expanded="false"
-				aria-label="Toggle navigation">
-			<?php
-			switch ( wpm_get_language() ) {
-				case 'uk':
-					$menu_btn_translate = 'Меню';
-					break;
-				case 'en':
-					$menu_btn_translate = 'Menu';
-					break;
-				default:
-					$menu_btn_translate = 'Меню';
-			}
-			echo $menu_btn_translate;
-			?>
-		</button>
-	</div>
-
-	<div class="row">
-		<div class="collapse navbar-collapse" id="mobileMenuContent">
-			<?php restoran_menu(); ?>
+	<section class="restoran-menu-block--btn">
+		<div class="container d-lg-none">
+			<div class="row d-flex align-items-center justify-content-center">
+				<button class="navbar-toggler restoran-menu-btn collapsed"
+						type="button"
+						data-toggle="collapse"
+						data-target="#mobileMenuContent"
+						aria-controls="mobileMenuContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation">
+					<?php
+					switch ( wpm_get_language() ) {
+						case 'uk':
+							$menu_btn_translate = 'Меню';
+							break;
+						case 'en':
+							$menu_btn_translate = 'Menu';
+							break;
+						default:
+							$menu_btn_translate = 'Меню';
+					}
+					echo $menu_btn_translate;
+					?>
+				</button>
+			</div>
 		</div>
-	</div>
+	</section>
 
-</div>
+	<section class="restoran-menu-block--menu">
+		<div class="container d-lg-none">
+			<div class="row">
+				<div class="collapse navbar-collapse" id="mobileMenuContent">
+					<?php restoran_menu(); ?>
+				</div>
+			</div>
+		</div>
+	</section>
+
 </div>
 
 

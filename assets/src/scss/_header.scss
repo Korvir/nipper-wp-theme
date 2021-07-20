@@ -310,12 +310,15 @@ header{
 			a{
 				padding: 1em;
 				margin: 0 0.5em;
-				border-bottom: 1px solid #F1F3F5;
 				width: 100%;
 				text-align: center;
 				font-size: 18px;
 				color: #3a485a;
-				&:last-child{
+				border-bottom: 1px solid #F1F3F5;
+			}
+			
+			&:last-child{
+				a{
 					border-bottom: none;
 				}
 			}
@@ -327,6 +330,13 @@ header{
 
 .restoran-menu-block{
 	background-color: #F1F3F5;
+
+	&--btn{}
+
+	&--menu{
+		background-color: #fff;
+	}
+
 }
 
 
