@@ -196,6 +196,14 @@
 
 		</footer>
 
+
+		<div class="gototop-row container">
+			<button id="gototop" class="gototop-row--btn">
+				<i class="fas fa-angle-up"></i>
+			</button>
+		</div>
+
+
 		<?php
 		get_template_part( '/components/modal', 'review');
 
