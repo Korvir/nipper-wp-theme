@@ -65,7 +65,7 @@
 
 			// animate
 			$('html, body').animate({
-				scrollTop: $(this.hash).offset().top - 80
+				scrollTop: $(this.hash).offset().top - 66
 			}, 900, function(){
 			});
 		});

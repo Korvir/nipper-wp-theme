@@ -40,12 +40,11 @@ if ( function_exists( 'get_field' ) ) {
 
 			<div class="col-6 col-lg-3 d-flex align-items-center justify-content-start">
 				<div class="logo">
-					<a href="<?php echo home_url(); ?>">
-						<img src="<?php echo $site_logo['sizes']['medium'] ?>"
-							 class="site_logo w-100 lazyloaded"
-							 alt="Logo"
-							 loading="lazy">
-					</a>
+					<img src="<?php echo $site_logo['sizes']['medium'] ?>"
+						 class="site_logo w-100 lazyloaded"
+						 id="header_logo"
+						 alt="Logo"
+						 loading="lazy">
 				</div>
 			</div>
 
