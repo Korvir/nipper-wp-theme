@@ -117,6 +117,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_6137163a23253",
+                            "label": "Время для левой колонки",
+                            "name": "time_left",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_600fd2f8b206f",
                             "label": "Левая колонка Категория",
                             "name": "left_column_tax_title",
@@ -163,6 +182,25 @@
                             "min": "",
                             "max": "",
                             "return_format": "object"
+                        },
+                        {
+                            "key": "field_6137180d808b7",
+                            "label": "Время для правой колонки",
+                            "name": "time_right",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         },
                         {
                             "key": "field_600fd356b2070",
@@ -226,6 +264,25 @@
                             "key": "field_6094ef776b459",
                             "label": "Якорь",
                             "name": "anchor",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6137165023254",
+                            "label": "Время",
+                            "name": "time",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -314,5 +371,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1620373398
+    "modified": 1631000613
 }

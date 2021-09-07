@@ -304,12 +304,12 @@ header{
 		list-style: none;
 
 		li{
-			@include flex(row, center, center);
+			@include flex(column, center, center);
 			width: 100%;
+			padding: 1em;
+			margin: 0 0.5em;
 
 			a{
-				padding: 1em;
-				margin: 0 0.5em;
 				width: 100%;
 				text-align: center;
 				font-size: 18px;

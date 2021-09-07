@@ -1,8 +1,8 @@
 <?php
 
-if ( function_exists('get_field') )
-{
-	$anchor			= get_sub_field( 'anchor' );
+if ( function_exists( 'get_field' ) ) {
+	$anchor         = get_sub_field( 'anchor' );
+	$time           = get_sub_field( 'time' );
 	$main_col_id    = get_sub_field( 'column_tax_title' );
 	$main_col_posts = get_sub_field( 'column_tax_posts' );
 	$price_currency = get_field( 'main_currency_symbol', 'options' );
@@ -18,10 +18,17 @@ $cur_lang = wpm_get_language();
 			<?php if ( $main_col_id ) : ?>
 
 				<?php
-				$tax_obj = get_term_by( 'term_taxonomy_id', $main_col_id );
+				$tax_obj       = get_term_by( 'term_taxonomy_id', $main_col_id );
 				?>
 
 				<div class="col-12 d-flex px-xxl-5 flex-wrap align-items-start justify-content-start">
+					<span class="mb-1">
+						<?php
+						if ( isset( $time ) && ! empty( $time ) ) {
+							echo $time;
+						}
+						?>
+					</span>
 					<h2 class="w-100"> <?php echo $tax_obj->name ?> </h2>
 				</div>
 
@@ -42,7 +49,7 @@ $cur_lang = wpm_get_language();
 									</div>
 								</div>
 
-								<?php if ( !empty( $s_post->post_content ) ) : ?>
+								<?php if ( ! empty( $s_post->post_content ) ) : ?>
 									<div class="single-restaurant-product--content">
 										<?php echo wpm_translate_string( $s_post->post_content, $cur_lang ); ?>
 									</div>
