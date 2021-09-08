@@ -41,9 +41,11 @@ function custom_nav_edit_walker($walker,$menu_id) {
  */
 add_action('wp_update_nav_menu_item', 'custom_nav_update',10, 3);
 function custom_nav_update($menu_id, $menu_item_db_id, $args ) {
-	if ( is_array($_REQUEST['menu-item-custom']) ) {
-		$custom_value = $_REQUEST['menu-item-custom'][$menu_item_db_id];
-		update_post_meta( $menu_item_db_id, '_menu_item_custom', $custom_value );
+	if ( is_array($_REQUEST['menu-item-custom1']) || is_array($_REQUEST['menu-item-custom2']) ) {
+		$custom_value1 = $_REQUEST['menu-item-custom1'][$menu_item_db_id];
+		$custom_value2 = $_REQUEST['menu-item-custom2'][$menu_item_db_id];
+		update_post_meta( $menu_item_db_id, '_menu_item_custom1', $custom_value1 );
+		update_post_meta( $menu_item_db_id, '_menu_item_custom2', $custom_value2 );
 	}
 }
 
@@ -52,7 +54,8 @@ function custom_nav_update($menu_id, $menu_item_db_id, $args ) {
  */
 add_filter( 'wp_setup_nav_menu_item','custom_nav_item' );
 function custom_nav_item($menu_item) {
-	$menu_item->custom = get_post_meta( $menu_item->ID, '_menu_item_custom', true );
+	$menu_item->custom1 = get_post_meta( $menu_item->ID, '_menu_item_custom1', true );
+	$menu_item->custom2 = get_post_meta( $menu_item->ID, '_menu_item_custom2', true );
 	return $menu_item;
 }
 
@@ -239,8 +242,14 @@ class Walker_Nav_Menu_Edit_Custom extends Walker_Nav_Menu  {
 				</p>
 				<p class="field-custom description description-wide">
 					<label for="edit-menu-item-custom-<?php echo $item_id; ?>">
-						<?php _e( 'Custom' ); ?><br />
-						<input type="text" id="edit-menu-item-custom-<?php echo $item_id; ?>" class="widefat code edit-menu-item-custom" name="menu-item-custom[<?php echo $item_id; ?>]" value="<?php echo esc_attr( $item->custom ); ?>" />
+						<?php _e( 'Custom row 1' ); ?><br />
+						<input type="text" id="edit-menu-item-custom1-<?php echo $item_id; ?>" class="widefat code edit-menu-item-custom" name="menu-item-custom1[<?php echo $item_id; ?>]" value="<?php echo esc_attr( $item->custom1 ); ?>" />
+					</label>
+				</p>
+				<p class="field-custom description description-wide">
+					<label for="edit-menu-item-custom-<?php echo $item_id; ?>">
+						<?php _e( 'Custom row 2' ); ?><br />
+						<input type="text" id="edit-menu-item-custom2-<?php echo $item_id; ?>" class="widefat code edit-menu-item-custom" name="menu-item-custom2[<?php echo $item_id; ?>]" value="<?php echo esc_attr( $item->custom2 ); ?>" />
 					</label>
 				</p>
 				<fieldset class="field-move hide-if-no-js description description-wide">

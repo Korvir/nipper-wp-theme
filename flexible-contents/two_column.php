@@ -2,8 +2,13 @@
 if ( function_exists( 'get_field' ) )
 {
 	$anchor			= get_sub_field( 'anchor' );
-	$time_left			= get_sub_field( 'time_left' );
-	$time_right			= get_sub_field( 'time_right' );
+
+	$time_1_left			= get_sub_field( 'time_1_left' );
+	$time_2_left			= get_sub_field( 'time_2_left' );
+
+	$time_1_right			= get_sub_field( 'time_1_right' );
+	$time_2_right			= get_sub_field( 'time_2_right' );
+
 	$left_col_id  = get_sub_field( 'left_column_tax_title' );
 	$right_col_id = get_sub_field( 'right_column_tax_title' );
 
@@ -26,13 +31,13 @@ $cur_lang = wpm_get_language();
 					$tax_obj = get_term_by( 'term_taxonomy_id', $left_col_id );
 					?>
 
-					<span class="mb-1">
-						<?php
-						if ( isset( $time_left ) && ! empty( $time_left ) ) {
-							echo $time_left;
-						}
-						?>
-					</span>
+					<p class="w-100 m-0 mb-1">
+						<?php if ( isset( $time_1_left ) && ! empty( $time_1_left ) ) { echo $time_1_left; } ?>
+					</p>
+					<p class="w-100 m-0 mb-1">
+						<?php if ( isset( $time_2_left ) && ! empty( $time_2_left ) ) { echo $time_2_left; } ?>
+					</p>
+
 					<h2> <?php echo $tax_obj->name ?> </h2>
 
 					<?php if ( $left_col_posts ) : ?>
@@ -76,13 +81,13 @@ $cur_lang = wpm_get_language();
 					$tax_obj = get_term_by( 'term_taxonomy_id', $right_col_id );
 					?>
 
-					<span class="mb-1">
-						<?php
-						if ( isset( $time_right ) && ! empty( $time_right ) ) {
-							echo $time_right;
-						}
-						?>
-					</span>
+					<p class="w-100 m-0 mb-1">
+						<?php if ( isset( $time_1_right ) && ! empty( $time_1_right ) ) { echo $time_1_right; } ?>
+					</p>
+					<p class="w-100 m-0 mb-1">
+						<?php if ( isset( $time_2_right ) && ! empty( $time_2_right ) ) { echo $time_2_right; } ?>
+					</p>
+
 					<h2> <?php echo $tax_obj->name ?> </h2>
 
 					<?php if ( $right_col_posts ) :

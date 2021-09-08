@@ -2,7 +2,8 @@
 
 if ( function_exists( 'get_field' ) ) {
 	$anchor         = get_sub_field( 'anchor' );
-	$time           = get_sub_field( 'time' );
+	$time_1           = get_sub_field( 'time_1' );
+	$time_2           = get_sub_field( 'time_2' );
 	$main_col_id    = get_sub_field( 'column_tax_title' );
 	$main_col_posts = get_sub_field( 'column_tax_posts' );
 	$price_currency = get_field( 'main_currency_symbol', 'options' );
@@ -22,13 +23,9 @@ $cur_lang = wpm_get_language();
 				?>
 
 				<div class="col-12 d-flex px-xxl-5 flex-wrap align-items-start justify-content-start">
-					<span class="mb-1">
-						<?php
-						if ( isset( $time ) && ! empty( $time ) ) {
-							echo $time;
-						}
-						?>
-					</span>
+					<p class="w-100 m-0 mb-1">
+						<?php if ( isset( $time_1 ) && ! empty( $time_1 ) ) { echo $time_1; } ?>
+					</p>
 					<h2 class="w-100"> <?php echo $tax_obj->name ?> </h2>
 				</div>
 

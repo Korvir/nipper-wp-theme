@@ -118,8 +118,27 @@
                         },
                         {
                             "key": "field_6137163a23253",
-                            "label": "Время для левой колонки",
-                            "name": "time_left",
+                            "label": "Время 1 для левой колонки",
+                            "name": "time_1_left",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_613856317b12b",
+                            "label": "Время 2 для левой колонки",
+                            "name": "time_2_left",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -185,8 +204,27 @@
                         },
                         {
                             "key": "field_6137180d808b7",
+                            "label": "Время 1 для правой колонки",
+                            "name": "time_1_right",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_6138564a7b12c",
                             "label": "Время для правой колонки",
-                            "name": "time_right",
+                            "name": "time_2_right",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -281,8 +319,27 @@
                         },
                         {
                             "key": "field_6137165023254",
-                            "label": "Время",
-                            "name": "time",
+                            "label": "Время 1",
+                            "name": "time_1",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_613856257b12a",
+                            "label": "Время 2",
+                            "name": "time_2",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -371,5 +428,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1631000613
+    "modified": 1631082084
 }

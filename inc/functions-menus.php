@@ -128,9 +128,13 @@ class My_Walker_Nav_Menu extends Walker_Nav_Menu {
 		// build html
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 
-		if ( isset($item->custom) && !empty($item->custom))
+		if ( isset($item->custom1) && !empty($item->custom1))
 		{
-			$output .= $indent . '<p class="m-0 '. $item->custom . '">' . $item->custom . '</p>';
+			$output .= $indent . '<p class="m-0 '. $item->custom1 . '">' . $item->custom1 . '</p>';
+		}
+		if ( isset($item->custom2) && !empty($item->custom2))
+		{
+			$output .= $indent . '<p class="m-0 '. $item->custom2 . '">' . $item->custom2 . '</p>';
 		}
 
 	}
